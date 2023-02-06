@@ -3,7 +3,6 @@ import inquirer from "inquirer";
 import database from "./config/connection.js";
 import databaseQuery from "./queries.js";
 import * as query from "./queries.js";
-require("dotenv").config();
 
 // async funtion for Inquirer
 async function userInterface() {
@@ -118,7 +117,7 @@ async function userInterface() {
     });
 }
 
-// Function to display tables
+// function to display tables
 const tableDisplay = async (answers) => {
   let displayTable;
   if (answers.actionChoice === "View all Departments") {
@@ -133,16 +132,16 @@ const tableDisplay = async (answers) => {
   console.log("-------------");
 };
 
-// Function to update the database based on user input
+// function to update the database based on user input
 const updateDatabase = async (answers) => {
-  // If user chose to Add Department
+  // if user chose to add department
   if (answers.actionChoice === "Add a Department") {
     await databaseQuery(
       `INSERT INTO department (name) VALUES  ("${answers.newDepartment}")`
     );
     console.log(`New Department "${answers.newDepartment}" added.`);
   }
-  // If User chose to Add Role
+  // if user chose to add role
   else if (answers.actionChoice === "Add a Role") {
     let newRoleDepartment = await databaseQuery(
       `SELECT id FROM department WHERE name = "${answers.newRoleDepartment}";`
@@ -153,9 +152,9 @@ const updateDatabase = async (answers) => {
     );
     console.log(`New Role "${answers.newRole}" added.`);
   }
-  // If user chose to Add Employee
+  // if user chose to add employee
   else if (answers.actionChoice === "Add an Employee") {
-    // Work for Role value
+    // work for role value
     let newEmployeeRoleID = await databaseQuery(
       `SELECT id FROM role WHERE title = "${answers.newEmployeeRole}";`
     );

@@ -1,6 +1,6 @@
-import database from "../config/connection.js";
+import database from "./config/connection.js";
 
-// Plain Text Query variables
+// text query variables
 const getDepartments = "SELECT name FROM department";
 const getRoles = "SELECT title FROM role";
 const getManagers =

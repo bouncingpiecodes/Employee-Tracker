@@ -1,20 +1,21 @@
-// Import Modules and files
+// import Modules and files
 import inquirer from "inquirer";
 import database from "./config/connection.js";
-import databaseQuery from "./queries/queries.js";
-import * as query from "./queries/queries.js";
+import databaseQuery from "./queries.js";
+import * as query from "./queries.js";
+require("dotenv").config();
 
-// Async funtion for Inquirer
+// async funtion for Inquirer
 async function userInterface() {
   console.log("-------------");
 
-  // Pull choice lists from database for Inquirer prompt
+  // pull choice lists from database for inquirer prompt
   let departmentList = await databaseQuery(query.getDepartments);
   let roleList = await databaseQuery(query.getRoles);
   let managerList = await databaseQuery(query.getManagers);
   let employeeList = await databaseQuery(query.getEmployees);
 
-  // Format choice lists for Inquirer prompt
+  // format choice lists for inquirer prompt
   roleList = roleList.map((item) => {
     return { name: item.title };
   });
@@ -26,7 +27,7 @@ async function userInterface() {
     return { name: `${item.first_name} ${item.last_name}` };
   });
 
-  // Inquirer function
+  // inquirer function
   await inquirer
     .prompt([
       {

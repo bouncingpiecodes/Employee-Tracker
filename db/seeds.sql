@@ -17,13 +17,13 @@ VALUES  ("Marketing Manager", 120000, 1),
         ("Accountant", 80000, 4);
 
 INSERT INTO employee (first_name, last_name, role_id, manager_id)
-VALUES  ("Robert", "Specktor", 1, NULL),
-        ("Skip", "Branchild", 2, 1),
-        ("Lucy", "Jenkins", 3, 1),
-        ("Elizabeth", "Brokaw", 4, NULL),
-        ("Stanley", "Allen", 5, 4),
-        ("Patrick", "Whitaker", 6, NULL),
-        ("Marcy", "Caufield", 7, 6),
-        ("Joe", "Hanker", 8, 6),
-        ("Jessica", "Nysmith", 9, NULL),
-        ("Brenda", "Wilson", 10, 9);
+VALUES  ("Robert", "Smith", 1, NULL),
+        ("Sioxsie", "Sioux", 2, 1),
+        ("Tom", "Petty", 3, 1),
+        ("Laura Jane", "Grace", 4, NULL),
+        ("Glen", "Danzig", 5, 4),
+        ("Kathleen", "Hanna", 6, NULL),
+        ("Joey", "Ramone", 7, 6),
+        ("Patti", "Smith", 8, 6),
+        ("Dolly", "Parton", 9, NULL),
+        ("Rob", "Halford", 10, 9);

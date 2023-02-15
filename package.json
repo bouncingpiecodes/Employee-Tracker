@@ -20,7 +20,7 @@
   "homepage": "https://github.com/bouncingpiecodes/Employee-Tracker#readme",
   "dependencies": {
     "dotenv": "^16.0.3",
-    "inquirer": "^9.1.4",
+    "inquirer": "^8.2.4",
     "js": "^0.1.0",
     "mysql": "^2.18.1",
     "mysql2": "^3.1.0",
